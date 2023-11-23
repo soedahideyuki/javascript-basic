@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript基礎編</title>
+</head>
+<body>
+  <h1>ユーザー名を入力してください。</h1>
+  <input type="text"  id="userNameInput">
+  <button id="save-btn">保存</button>
+  <script>
+    const button=document.getElementById('save-btn');
+    button.addEventListener('click',()=>{
+      const userName=document.getElementById('userNameInput').value;
+      // session storageにユーザー名を保存
+      sessionStorage.setItem('userName',userName);
+      // 別のwebページに遷移
+      location.href='session_get.html';
+    });
+  </script>
+</body>
+</html>
